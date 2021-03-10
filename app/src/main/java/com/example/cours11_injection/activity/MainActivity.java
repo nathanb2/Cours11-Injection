@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.cours11_injection.R;
 import com.example.cours11_injection.injection.Injection;
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //on cree notre userViewmodel a l'aide de notre ViewModelFactory qui va se charger de creer toute les instances de classes necessaires au viewModel
-        ViewModelFactory mViewModelFactory = Injection.provideViewModelFactory(this);
-        UsersViewModel usersViewModel = mViewModelFactory.create(UsersViewModel.class);
+        ViewModelFactory viewModelfactory = Injection.provideViewModelFactory(this);
+        UsersViewModel usersViewModel = new ViewModelProvider(this, viewModelfactory).get(UsersViewModel.class);
 
         TextView textView = findViewById(R.id.AM_tv);
 
