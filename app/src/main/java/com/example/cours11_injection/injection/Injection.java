@@ -9,7 +9,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 /**
- * class qui cree
+ * class qui cree les instances de class necessaires aux differents viewModel du projet
+ * L'objectif et que chaque class recoive directement tout ce dont elle a besoin et n'ai pas a recevoir de parametre qui lui serait necessaire a dans un deuxieme temps pouvoir construire les instance de ce dont elle a reeelement besoin
+ * CHAQUE CLASS RECOIT CE DONT ELLE A BESOIN (EN PARAMETRE DE CONSTRUCTOR TOUTE LES VARIABLES QU'ELLE DECLARE AU NIVEAU DE LA CLASS)
  */
 public class Injection {
 

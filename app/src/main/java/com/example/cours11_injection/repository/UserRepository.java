@@ -17,6 +17,9 @@ public class UserRepository {
 
     UserDao userDao;
 
+    /**
+     * @param userDao Le constructor recoit desormais directement ce dont il a besoin : userDao  et non plus application pour recuperer la database pour creer un Dao
+     */
     public UserRepository(UserDao userDao) {
         this.userDao = userDao;
     }
